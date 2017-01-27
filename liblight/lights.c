@@ -2,7 +2,7 @@
  * Copyright (C) 2008 The Android Open Source Project
  * Copyright (C) 2014 The Linux Foundation. All rights reserved.
  * Copyright (C) 2015 The CyanogenMod Project
- * Copyright (C) 2016 The LineageOS Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,6 @@
 
 #include <hardware/lights.h>
 
-#include "lights.h"
-
 /******************************************************************************/
 
 struct backlight_config {
@@ -58,7 +56,10 @@ char const*const BLUE_LED_FILE
         = "/sys/class/leds/blue/brightness";
 
 char const*const LCD_FILE
-        = "/sys/class/leds/wled/brightness";
+        = "/sys/class/leds/lcd-backlight/brightness";
+
+char const*const LCD_MAX_BRIGHTNESS_FILE
+        = "/sys/class/leds/lcd-backlight/max_brightness";
 
 const char*const BUTTONS_FILE
         = "/sys/class/leds/button-backlight/brightness";
@@ -326,9 +327,6 @@ set_speaker_light_locked(struct light_device_t* dev,
     blue = colorRGB & 0xFF;
     blink = onMS > 0 && offMS > 0;
 
-    // disable all blinking to start
-    write_int(RGB_BLINK_FILE, 0);
-
     if (blink) {
         stepDuration = RAMP_STEP_DURATION;
         pauseHi = onMS - (stepDuration * RAMP_SIZE * 2);
@@ -369,10 +367,12 @@ set_speaker_light_locked(struct light_device_t* dev,
         write_int(BLUE_PAUSE_HI_FILE, pauseHi);
         write_int(BLUE_RAMP_STEP_MS_FILE, stepDuration);
         free(duty);
-
-        // start the party
-        write_int(RGB_BLINK_FILE, 1);
-
+        if (red)
+            write_int(RED_BLINK_FILE, blink);
+        if (green)
+            write_int(GREEN_BLINK_FILE, blink);
+        if (blue)
+            write_int(BLUE_BLINK_FILE, blink);
     } else {
         if (red == 0 && green == 0 && blue == 0) {
             write_int(RED_BLINK_FILE, 0);
@@ -498,7 +498,7 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     else
         return -EINVAL;
 
-    int max_brightness = read_int(PANEL_MAX_BRIGHTNESS_NODE);
+    int max_brightness = read_int(LCD_MAX_BRIGHTNESS_FILE);
     if (max_brightness < 0) {
         ALOGE("%s: failed to read max panel brightness, fallback to 255!",
             __func__);
@@ -537,7 +537,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "Lights Module",
-    .author = "The CyanogenMod Project",
+    .name = "X2 Lights Module",
+    .author = "The LineageOS Project",
     .methods = &lights_module_methods,
 };
