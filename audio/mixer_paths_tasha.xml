@@ -1977,7 +1977,7 @@
 
     <path name="speaker-mic">
         <path name="adc4" />
-        <ctl name="ADC4 Volume" value="10" />
+        <ctl name="ADC4 Volume" value="50" />
     </path>
 
     <path name="echo-reference-audio-ec-speaker">
@@ -1991,7 +1991,7 @@
 
     <path name="speaker-mic-sbc">
         <path name="adc5" />
-        <ctl name="ADC5 Volume" value="12" />
+        <ctl name="ADC5 Volume" value="50" />
     </path>
 
     <path name="speaker-protected">
@@ -2036,7 +2036,7 @@
 
     <path name="handset-mic">
         <path name="adc1" />
-        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="ADC1 Volume" value="50" />
     </path>
 
     <path name="handset-mic-db">
@@ -2118,12 +2118,12 @@
 
     <path name="headset-mic">
         <path name="adc2" />
-        <ctl name="ADC2 Volume" value="4" />
+        <ctl name="ADC2 Volume" value="50" />
     </path>
 
     <path name="headset-backmic">
         <path name="adc3" />
-        <ctl name="ADC3 Volume" value="4" />
+        <ctl name="ADC3 Volume" value="50" />
     </path>
 
     <path name="headset-mic-liquid">
@@ -2161,7 +2161,7 @@
 
     <path name="voice-speaker-mic">
         <path name="speaker-mic" />
-        <ctl name="ADC4 Volume" value="10" />
+        <ctl name="ADC4 Volume" value="50" />
     </path>
 
     <path name="voice-speaker-vbat">
@@ -2175,12 +2175,12 @@
 
     <path name="voice-headset-mic">
         <path name="headset-mic" />
-        <ctl name="ADC2 Volume" value="13" />
+        <ctl name="ADC2 Volume" value="53" />
     </path>
 
     <path name="voice-headset-backmic">
         <path name="headset-backmic" />
-        <ctl name="ADC3 Volume" value="13" />
+        <ctl name="ADC3 Volume" value="53" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -2367,12 +2367,12 @@
 
     <path name="voice-rec-mic">
         <path name="adc4" />
-        <ctl name="ADC4 Volume" value="4" />
+        <ctl name="ADC4 Volume" value="50" />
     </path>
 
     <path name="audio-rec-mic">
         <path name="adc4" />
-        <ctl name="ADC4 Volume" value="10" />
+        <ctl name="ADC4 Volume" value="50" />
     </path>
 
     <path name="camcorder-mic">
@@ -2385,8 +2385,8 @@
         <ctl name="ADC MUX8" value="AMIC" />
         <ctl name="AMIC MUX8" value="ADC5" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="ADC1 Volume" value="4" />
-        <ctl name="ADC5 Volume" value="4" />
+        <ctl name="ADC1 Volume" value="50" />
+        <ctl name="ADC5 Volume" value="50" />
     </path>
 
     <path name="hdmi-tx">
@@ -2497,8 +2497,8 @@
 
     <path name="voice-rec-dmic-ef-fluence">
         <path name="dmic-endfire" />
-        <ctl name="ADC1 Volume" value="12" />
-        <ctl name="ADC5 Volume" value="12" />
+        <ctl name="ADC1 Volume" value="50" />
+        <ctl name="ADC5 Volume" value="50" />
     </path>
 
     <path name="handset-stereo-dmic-ef-liquid">
