@@ -297,6 +297,10 @@ PRODUCT_COPY_FILES += \
 # for custom emoji font
 PRODUCT_PACKAGES += \
 	emojione-android.ttf
+	
+# custom washez boot animation
+PRODUCT_COPY_FILES += \
+	vendor/washez/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # Dalvik and hwui configs
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
