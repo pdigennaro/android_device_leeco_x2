@@ -59,6 +59,7 @@ lib/libarcsoft_panorama_burstcapture.so
 lib/libarcsoft_smart_denoise.so
 lib/libcameraservice.so
 lib/libcamera_letv_algo.so
+lib64/libcameraservice.so
 lib/libLetvCameraImageSDK.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
