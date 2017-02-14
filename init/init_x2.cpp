@@ -125,7 +125,7 @@ void vendor_load_properties() {
     int rc;
 
     property_set("ro.config.product", "x2");
-    property_set("ro.product.model", "Le X829");
+    property_set("ro.product.model", "Le X820");
 
     init_alarm_boot_properties();
 }
