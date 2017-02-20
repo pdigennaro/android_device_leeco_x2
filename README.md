@@ -1,6 +1,6 @@
 Copyright 2016 - The CyanogenMod Project
 
-Device configuration for Letv Max2 (Le X829)
+Device configuration for Letv Max2 (Le X820)
 =====================================
 
 Basic   | Spec Sheet
@@ -10,7 +10,7 @@ CHIPSET | Qualcomm MSM8996 Snapdragon 820
 GPU     | 624MHz Adreno 530
 Memory  | 4/6 GB
 Shipped Android Version | 6.0
-Storage | 64/128 GB
+Storage | 32/64/128 GB
 Battery | 3100 mAh (non-removable)
 Dimensions | 156.8 x 77.6 x 7.99 mm
 Display | 1440 x 2560 pixels, 5.7" AMOLED
