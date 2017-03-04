@@ -53,7 +53,7 @@ persist.camera.llc=1
 persist.camera.llnoise=1
 persist.camera.stats.test=5
 ro.qualcomm.cabl=2
-media.camera.ts.monotonic=0
+#media.camera.ts.monotonic=0
 persist.camera.HAL3.enabled=1
 
 # CNE
